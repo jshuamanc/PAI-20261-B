@@ -1,0 +1,39 @@
+﻿<Window x:Class="Semana04.ListView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Semana04"
+        mc:Ignorable="d"
+        Title="ListView" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="109*"/>
+            <RowDefinition Height="325*"/>
+        </Grid.RowDefinitions>
+        <ListView x:Name="lvAlumnos" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nombres" DisplayMemberBinding="{Binding Nombre}"/>
+                    <GridViewColumn Header="Apellidos" DisplayMemberBinding="{Binding Apellidos}"/>
+                    <GridViewColumn Header="Edad" DisplayMemberBinding="{Binding Edad}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Height="36">
+                <Label Content="Nombre"/>
+                <TextBox x:Name="txtNombres" TextWrapping="Wrap" Width="174"/>
+                <Label Content="Apellidos"/>
+                <TextBox x:Name="txtApellidos" TextWrapping="Wrap" Width="226"/>
+                <Label Content="Edad"/>
+                <TextBox x:Name="txtEdad" TextWrapping="Wrap" Width="120"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="50">
+                <Button x:Name="btnAgregar" Content="Agregar" VerticalAlignment="Center" Width="149" Click="btnAgregar_Click" Height="20"/>
+                <Button x:Name="btn_Seleccionado" Content="Item Seleccionado" Width="166" Margin="20,0,0,0" Height="20" Click="btn_Seleccionado_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>

@@ -1,0 +1,22 @@
+﻿<Window x:Class="Semana04.ListBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Semana04"
+        mc:Ignorable="d"
+        Title="ListBox" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="0,0,533,0">
+            <ListBox x:Name="lbxFrutas" Height="100">
+                <ListBoxItem Content="Piña"/>
+                <ListBoxItem Content="Papaya"/>
+            </ListBox>
+            <Button x:Name="btnMostrar" Content="Mostrar" Click="btnMostrar_Click"/>
+            <Label Content="Nueva Fruta" Margin="0,50,0,0"/>
+            <TextBox x:Name="txtNuevaFruta" TextWrapping="Wrap" Height="31" HorizontalAlignment="Left" Width="266"/>
+            <Button x:Name="btnAgregar" Content="Agregar" Click="btnAgregar_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
