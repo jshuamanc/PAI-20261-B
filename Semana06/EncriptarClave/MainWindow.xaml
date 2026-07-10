@@ -1,0 +1,33 @@
+﻿<Window x:Class="EncriptarClave.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EncriptarClave"
+        mc:Ignorable="d"
+        Title="Encriptar" Height="450" Width="800">
+    <Grid Margin="50,30,50,30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Clave:" FontWeight="Bold" Padding="0,0,10,0" />
+            <TextBox x:Name="txtClave" TextWrapping="Wrap" VerticalAlignment="Center" Width="200"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="btnEncriptar" Content="Encriptar" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,10" Padding="10,1,10,1" Click="btnEncriptar_Click"/>
+            <Button x:Name="btnDesencriptar" Content="Desencriptar" HorizontalAlignment="Left" Margin="10,10,0,10" Padding="10,1,10,1" VerticalAlignment="Center" Click="btnDesencriptar_Click"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Clave Encriptada:" FontWeight="Bold" Padding="0,0,10,0" />
+            <TextBox x:Name="txtClaveEncriptada" TextWrapping="Wrap" VerticalAlignment="Center" Width="200" IsReadOnly="True"/>
+        </StackPanel>
+        
+
+
+    </Grid>
+</Window>
