@@ -21,7 +21,7 @@
                 <ColumnDefinition Width="17*"/>
                 <ColumnDefinition Width="53*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnDividir" Content="&lt;&lt;Listar&gt;&gt;" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10,1,10,1" Margin="0,15,0,15"/>
+            <Button x:Name="btnDividir" Content="&lt;&lt;Listar&gt;&gt;" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10,1,10,1" Margin="0,15,0,15" Click="btnDividir_Click"/>
         </Grid>
         <Grid Grid.Row="2" Margin="0,0,0,0">
             <Grid.ColumnDefinitions>
@@ -36,7 +36,7 @@
             <StackPanel Grid.Column="2">
                 <Label Content="Letra" FontWeight="Bold" HorizontalContentAlignment="Center"/>
                 <TextBox x:Name="txtFiltrar" TextWrapping="Wrap" FontSize="15" HorizontalContentAlignment="Center" Margin="0,2,0,0"/>
-                <Button x:Name="btnFiltrar" Content="&lt;&lt;Pasar&gt;&gt;" Margin="0,15,0,0"/>
+                <Button x:Name="btnFiltrar" Content="&lt;&lt;Pasar&gt;&gt;" Margin="0,15,0,0" Click="btnFiltrar_Click"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="3">
