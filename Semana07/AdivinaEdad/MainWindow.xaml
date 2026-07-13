@@ -1,0 +1,51 @@
+﻿<Window x:Class="AdivinaEdad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdivinaEdad"
+        mc:Ignorable="d"
+        Title="AdivinaEdad" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Indicale al computador un intervalo de edades" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,20,0,20"/>
+        <Grid Grid.Row="1" Margin="0,20,0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1">
+                <TextBox x:Name="txtEdadMinima" TextWrapping="Wrap" Width="120" FontSize="15" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Column="3">
+                <TextBox x:Name="txtEdadMaxima" TextWrapping="Wrap" Width="120" Height="30" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+        <Button x:Name="btnPrimerIntento" Content="Primer Intento" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Padding="15,5,15,5" Margin="0,20,0,19"/>
+        <Label Content="La computadora piensa que tu edad es:" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" FontSize="15" FontWeight="Bold" Margin="0,20,0,19"/>
+        <TextBox x:Name="txtEdadPropuesta" HorizontalAlignment="Center" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" Height="30" Margin="0,20,0,20" IsReadOnly="True"/>
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnCorrecto" Grid.Column="1" Content="Correcto" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="15,5,15,5"/>
+            <Button x:Name="btnIncorrecto" Grid.Column="3" Content="Incorrecto" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="15,5,15,5"/>
+        </Grid>
+
+    </Grid>
+</Window>
