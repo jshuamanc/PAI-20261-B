@@ -32,7 +32,7 @@
                 <TextBox x:Name="txtEdadMaxima" TextWrapping="Wrap" Width="120" Height="30" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             </StackPanel>
         </Grid>
-        <Button x:Name="btnPrimerIntento" Content="Primer Intento" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Padding="15,5,15,5" Margin="0,20,0,19"/>
+        <Button x:Name="btnPrimerIntento" Content="Primer Intento" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Padding="15,5,15,5" Margin="0,20,0,19" Click="btnPrimerIntento_Click"/>
         <Label Content="La computadora piensa que tu edad es:" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" FontSize="15" FontWeight="Bold" Margin="0,20,0,19"/>
         <TextBox x:Name="txtEdadPropuesta" HorizontalAlignment="Center" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" Height="30" Margin="0,20,0,20" IsReadOnly="True"/>
         <Grid Grid.Row="5">
@@ -43,8 +43,8 @@
                 <ColumnDefinition Width="180"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnCorrecto" Grid.Column="1" Content="Correcto" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="15,5,15,5"/>
-            <Button x:Name="btnIncorrecto" Grid.Column="3" Content="Incorrecto" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="15,5,15,5"/>
+            <Button x:Name="btnCorrecto" Grid.Column="1" Content="Correcto" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="15,5,15,5" Click="btnCorrecto_Click"/>
+            <Button x:Name="btnIncorrecto" Grid.Column="3" Content="Incorrecto" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="15,5,15,5" Click="btnIncorrecto_Click"/>
         </Grid>
 
     </Grid>
