@@ -1,0 +1,40 @@
+﻿<Window x:Class="MenusContextuales.MenuPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MenusContextuales"
+        mc:Ignorable="d"
+        Title="MenuPrincipal" Height="450" Width="800">
+    <Grid>
+        <DockPanel LastChildFill="False">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="Archivo">
+                    <MenuItem Header="Nuevo"/>
+                    <MenuItem Header="Abrir"/>
+                    <MenuItem Header="Guardar"/>
+                    <Separator/>
+                    <MenuItem Header="Salir" Click="MenuItem_Click"/>
+                </MenuItem>
+                <MenuItem Header="Herramientas">
+                    <MenuItem Header="Administrar Usuarios"/>
+                    <MenuItem Header="Mostrar Grupos" IsChecked="True"/>
+                </MenuItem>
+
+            </Menu>
+            <ToolBarTray DockPanel.Dock="Top">
+                <ToolBar >
+                    <Button Content="Nuevo" />
+                    <Button Content="Abrir" />
+                    <Button Content="Guardar" />
+                </ToolBar>
+                <ToolBar >
+                    <Button Content="Cortar" />
+                    <Button Content="Copiar" />
+                    <Button Content="Pegar" />
+                </ToolBar>
+            </ToolBarTray>
+        </DockPanel>
+
+    </Grid>
+</Window>
