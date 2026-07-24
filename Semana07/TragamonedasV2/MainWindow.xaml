@@ -1,0 +1,77 @@
+﻿<Window x:Class="TragamonedasV2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TragamonedasV2"
+        mc:Ignorable="d"
+        Title="Tragamonedas_v2" Height="600" Width="1000" MinHeight="420" MinWidth="600">
+    <Window.Resources>
+        <SolidColorBrush x:Key="AccentMint" Color="#DFF9F0"/>
+        <SolidColorBrush x:Key="AccentYellow" Color="#FFEE66"/>
+        <Style TargetType="Button" x:Key="PrimaryButton">
+            <Setter Property="Padding" Value="8,6" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Margin" Value="0,8" />
+            <Setter Property="MinWidth" Value="140" />
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" /> <!-- reloj -->
+            <RowDefinition Height="Auto" /> <!-- boton -->
+            <RowDefinition Height="*" />    <!-- contenido principal -->
+            <RowDefinition Height="Auto" /> <!-- estado -->
+        </Grid.RowDefinitions>
+
+        <!-- Reloj grande, centrado y responsivo -->
+        <Border Grid.Row="0" Background="{StaticResource AccentMint}" CornerRadius="4" Padding="8" HorizontalAlignment="Center" Margin="0,8">
+            <Viewbox Stretch="Uniform" Width="420" Height="64">
+                <TextBlock x:Name="TimeTextBlock" Text="19:18:55" FontSize="48" FontWeight="SemiBold" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Viewbox>
+        </Border>
+
+        <!-- Botón iniciar -->
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+            <Button x:Name="StartButton" Content="Iniciar Juego" Style="{StaticResource PrimaryButton}" />
+        </StackPanel>
+
+        <!-- Contenedor principal: imágenes y panel de puntaje -->
+        <Grid Grid.Row="2" Margin="0,24,0,24">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="260" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Área de imágenes centrada -->
+            <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <UniformGrid Rows="1" Columns="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,12">
+                    <!-- Reemplazar Source con las rutas reales de los recursos de la solución -->
+                    <Border Width="120" Height="120" Background="#2E0F3E" CornerRadius="4" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="8">
+                        <Image x:Name="Image1" Stretch="Uniform" Source="Images/grapes.png" />
+                    </Border>
+                    <Border Width="120" Height="120" Background="#2E0F3E" CornerRadius="4" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="8">
+                        <Image x:Name="Image2" Stretch="Uniform" Source="Images/raspberry.png" />
+                    </Border>
+                    <Border Width="120" Height="120" Background="#2E0F3E" CornerRadius="4" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="8">
+                        <Image x:Name="Image3" Stretch="Uniform" Source="Images/banana.png" />
+                    </Border>
+                </UniformGrid>
+            </StackPanel>
+
+            <!-- Panel de puntaje a la derecha -->
+            <StackPanel Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="16,0,0,0">
+                <TextBlock Text="Puntaje:" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,0,0,8" />
+                <Border Background="{StaticResource AccentYellow}" Width="80" Height="72" CornerRadius="4" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock x:Name="ScoreTextBlock" Text="10" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+            </StackPanel>
+        </Grid>
+
+        <!-- Mensaje de estado en la parte inferior -->
+        <Border Grid.Row="3" Background="{StaticResource AccentMint}" Padding="12" CornerRadius="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
+            <TextBlock x:Name="StatusTextBlock" Text="PERDISTE, puntaje obtenido: 10" Foreground="#0A2B5A" FontWeight="Bold" FontSize="16" TextAlignment="Center" />
+        </Border>
+    </Grid>
+</Window>

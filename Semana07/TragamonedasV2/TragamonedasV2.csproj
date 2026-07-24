@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Imagenes\1.png" />
+    <None Remove="Imagenes\2.png" />
+    <None Remove="Imagenes\3.png" />
+    <None Remove="Imagenes\4.png" />
+    <None Remove="Imagenes\5.png" />
+    <None Remove="Imagenes\6.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Imagenes\1.png" />
+    <Resource Include="Imagenes\2.png" />
+    <Resource Include="Imagenes\3.png" />
+    <Resource Include="Imagenes\4.png" />
+    <Resource Include="Imagenes\5.png" />
+    <Resource Include="Imagenes\6.png" />
+  </ItemGroup>
+
+</Project>
