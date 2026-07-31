@@ -1,5 +1,8 @@
 <Solution>
   <Project Path="MenusContextuales/MenusContextuales.csproj" Id="272b8a56-0f7c-4de4-818e-8079b0f35a60" />
+  <Project Path="Paginas/Paginas.csproj" Id="366c69ff-9655-4f91-b631-d0a72216c4a2" />
   <Project Path="Temperaturas/Temperaturas.csproj" Id="f84eef65-247c-494a-8f06-12ae9a6165a6" />
+  <Project Path="VentanaDock/VentanaDock.csproj" Id="224322d6-01a2-4b55-bfb7-cc4ad7b0548c" />
+  <Project Path="VentanaMDI/VentanaMDI.csproj" Id="935f6568-0e13-466c-8bd4-5602ce7e6d31" />
   <Project Path="Votos/Votos.csproj" Id="4988952d-c33c-4aba-b4f0-ad48926e045c" />
 </Solution>
