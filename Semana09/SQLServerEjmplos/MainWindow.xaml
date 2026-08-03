@@ -1,0 +1,22 @@
+﻿<Window x:Class="SQLServerEjmplos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SQLServerEjmplos"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="99*"/>
+            <RowDefinition Height="335*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btnConectar" Content="Verificar Conectar" HorizontalAlignment="Left" Margin="40,28,0,0" VerticalAlignment="Top" Click="btnConectar_Click"/>
+        <ComboBox x:Name="cbxCategorias" HorizontalAlignment="Left" Margin="212,26,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="Nombre" SelectedValuePath="Id"/>
+        <Button x:Name="btnCargar" Content="Cargar Categorias" HorizontalAlignment="Left" Margin="400,28,0,0" VerticalAlignment="Top" Click="btnCargar_Click"/>
+        <Button x:Name="btnSeleccionado" Content="Seleccionado" HorizontalAlignment="Left" Margin="519,28,0,0" VerticalAlignment="Top" Click="btnSeleccionado_Click"/>
+        <Button x:Name="btnMostrarProductos" Content="Productos" HorizontalAlignment="Left" Margin="624,28,0,0" VerticalAlignment="Top" Click="btnMostrarProductos_Click"/>
+        <DataGrid x:Name="dgProductos" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+
+    </Grid>
+</Window>
