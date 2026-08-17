@@ -4,10 +4,10 @@ using System.Text;
 
 namespace EjemploMVVM.Models
 {
-    internal class Producto
+    public class Producto
     {
         public int Id { get; set; }
-        public string nombre { get; set; }
+        public string nombre { get; set; } = string.Empty;
         public decimal precio { get; set; }
         public bool discontinuado { get; set; }
     }

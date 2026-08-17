@@ -11,8 +11,12 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="347*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="btnCargar" Content="Cargar Productos" Padding="5" Click="btnCargar_Click" />
-        <DataGrid x:Name="dgProductos" Grid.Row="1" IsReadOnly="True"/>
+        <Button Content="Cargar Productos" Padding="5" Command="{Binding ComandoCargarProductos, UpdateSourceTrigger=PropertyChanged}" />
+        <DataGrid Grid.Row="1" IsReadOnly="True" ItemsSource="{Binding productos}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="ID" Width="80"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Window>

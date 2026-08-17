@@ -12,9 +12,4 @@
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>

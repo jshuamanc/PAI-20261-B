@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EjemploMVVM.ViewModels;
 
 namespace EjemploMVVM
 {
@@ -18,25 +19,13 @@ namespace EjemploMVVM
     /// </summary>
     public partial class MainWindow : Window
     {
-        string cn = "Server=.;Database=Northwind;Integrated Security=True;TrustServerCertificate=True";
+        
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new ProductoViewModel();
         }
 
-        private void btnCargar_Click(object sender, RoutedEventArgs e)
-        {
-            string query = "SELECT ProductID,ProductName,UnitPrice,Discontinued FROM Products";
-
-            using (SqlConnection conex = new SqlConnection(cn))
-            {
-                SqlDataAdapter da = new SqlDataAdapter(query, conex);
-                DataTable dtProductos = new DataTable();
-
-                da.Fill(dtProductos);
-
-                dgProductos.ItemsSource = dtProductos.DefaultView;
-            }
-        }
+        
     }
 }
