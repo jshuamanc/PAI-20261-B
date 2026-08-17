@@ -10,18 +10,30 @@ namespace EjemploMVVM.ViewModels
 {
     public class ProductoViewModel
     {
-        public ObservableCollection<Producto> productos = new ObservableCollection<Producto>();
+        public ObservableCollection<Producto> productos { get; set; } = new ObservableCollection<Producto>();
 
-        public RelayCommand ComandoCargarProductos;
+        public RelayCommand ComandoCargarProductos { get; set; }
+
+        public string textoBuscar { get; set; } = string.Empty;
 
         private IProductoRepository _repository;
 
         public ProductoViewModel()
         {
             _repository = new ProductoRepositoryImpl();
-            ComandoCargarProductos = new RelayCommand(CargarProductos);
+            ComandoCargarProductos = new RelayCommand(BuscarProductos);
 
             CargarProductos();
+        }
+
+        private void BuscarProductos()
+        {
+            List<Producto> lista = _repository.BuscarPorNombre(textoBuscar);
+            productos.Clear();
+            foreach (Producto producto in lista)
+            {
+                productos.Add(producto);
+            }
         }
 
         public void CargarProductos()

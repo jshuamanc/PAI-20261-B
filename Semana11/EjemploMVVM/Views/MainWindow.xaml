@@ -11,10 +11,18 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="347*"/>
         </Grid.RowDefinitions>
-        <Button Content="Cargar Productos" Padding="5" Command="{Binding ComandoCargarProductos, UpdateSourceTrigger=PropertyChanged}" />
-        <DataGrid Grid.Row="1" IsReadOnly="True" ItemsSource="{Binding productos}">
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Buscar:" Margin="0,0,10,0" VerticalAlignment="Center"/>
+            <TextBox Width="250" Margin="0,0,10,0" Text="{Binding textoBuscar}"/>
+            <Button Content="Buscar Productos" Padding="5" Command="{Binding ComandoCargarProductos, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+        
+        <DataGrid Grid.Row="1" IsReadOnly="True" ItemsSource="{Binding productos}" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Header="ID" Width="80"/>
+                <DataGridTextColumn Binding="{Binding nombre}" Header="Nombre Producto" Width="300"/>
+                <DataGridTextColumn Binding="{Binding precio}" Header="Precio" Width="100"/>
+                <DataGridTextColumn Binding="{Binding discontinuado}" Header="Discontinuado" Width="100"/>
             </DataGrid.Columns>
         </DataGrid>
 
