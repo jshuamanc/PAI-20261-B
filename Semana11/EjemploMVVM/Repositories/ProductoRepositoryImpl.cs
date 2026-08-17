@@ -2,6 +2,7 @@
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Text;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -10,7 +11,11 @@ namespace EjemploMVVM.Repositories
 {
     public class ProductoRepositoryImpl : IProductoRepository
     {
-        string cn = "Server=.;Database=Northwind;Integrated Security=True;TrustServerCertificate=True";
+        string cn;
+        public ProductoRepositoryImpl()
+        {
+            cn = ConfigurationManager.ConnectionStrings["EjemploMVVM.Properties.Settings.NorthwindDB"].ConnectionString;
+        }
 
         public List<Producto> BuscarPorNombre(string nombre)
         {
