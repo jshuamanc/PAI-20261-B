@@ -1,0 +1,31 @@
+﻿<Window x:Class="EjemploMVVM.Views.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EjemploMVVM.Views"
+        mc:Ignorable="d"
+        Title="Login" Height="450" Width="800">
+    <Grid Margin="30">
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Usuario: " Margin="0,0,10,0" Width="80"/>
+                <TextBox Width="200" Text="{Binding usuario}" />
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Contraseña: " Margin="0,0,10,0" Width="80"/>
+                <TextBox Width="200" Text="{Binding password}" />
+            </StackPanel>
+            <StackPanel Grid.Row="2">
+                <Button Padding="10,5,10,5" Content="Iniciar Sesion" Command="{Binding LoginCommand}" />
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>
