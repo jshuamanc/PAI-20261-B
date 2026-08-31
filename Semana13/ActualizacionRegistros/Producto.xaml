@@ -1,11 +1,11 @@
-﻿<Window x:Class="ActualizacionRegistros.Categorias"
+﻿<Window x:Class="ActualizacionRegistros.Producto"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ActualizacionRegistros"
         mc:Ignorable="d"
-        Title="Categorias" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="Producto" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid Margin="30">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -25,22 +25,22 @@
                 </StackPanel>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
                     <TextBlock Text="Nombre: " Width="120"/>
-                    <TextBox x:Name="txtNombre" Width="200"/>
+                    <TextBox x:Name="txtNombre" Width="200" IsReadOnly="True"/>
                 </StackPanel>
                 <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0,0,10">
-                    <TextBlock Text="Descripción: " Width="120"/>
-                    <TextBox x:Name="txtDescripcion" Width="200"/>
+                    <TextBlock Text="Stock" Width="120"/>
+                    <TextBox x:Name="txtStock" Width="200"/>
                 </StackPanel>
                 <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button x:Name="btnNuevo" Content="Nuevo" Margin="0,0,10,0" Width="100" Click="btnNuevo_Click" />
-                    <Button x:Name="btnAgregar" Content="Guardar" Padding="0,5,0,5" Width="100" Click="btnAgregar_Click" />
+                    <Button x:Name="btnLimpiar" Content="Limpiar" Margin="0,0,10,0" Width="100" />
+                    <Button x:Name="btnActualizar" Content="Cambiar" Padding="0,5,0,5" Width="100" Click="btnActualizar_Click" />
                 </StackPanel>
 
             </Grid>
 
         </StackPanel>
 
-        <DataGrid x:Name="dgCategorias" Grid.Row="1" IsReadOnly="True" SelectionChanged="dgCategorias_SelectionChanged"/>
+        <DataGrid x:Name="dgProductos" Grid.Row="1" IsReadOnly="True" SelectionChanged="dgProductos_SelectionChanged" />
 
     </Grid>
 </Window>
