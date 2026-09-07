@@ -104,6 +104,8 @@ namespace ActualizacionRegistros
                     }
                     else
                     {
+                        conn.InfoMessage += Conn_InfoMessage;
+
                         cmd.CommandText = "SP_ActualizarPrecio";
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
@@ -120,12 +122,21 @@ namespace ActualizacionRegistros
 
                         cmd.Parameters.Add(pNuevoPrecio);
 
-                        cmd.ExecuteNonQuery();
+                        int filaAfectadas = cmd.ExecuteNonQuery();
 
                         decimal nuevoPrecio = (decimal)pNuevoPrecio.Value;
 
-                        MessageBox.Show($"Producto actualizado nuevo precio es {nuevoPrecio}");
-                        this.CargarProductos();
+                        if (filaAfectadas > 0)
+                        {
+                            MessageBox.Show($"Producto actualizado nuevo precio es {nuevoPrecio}");
+                            this.CargarProductos();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El registro fue modificado por otro usuario");
+                        }
+
+                        
                     }
 
                 }
@@ -140,6 +151,11 @@ namespace ActualizacionRegistros
             {
                 MessageBox.Show($"Error general {ex.Message}");
             }
+        }
+
+        private void Conn_InfoMessage(object sender, SqlInfoMessageEventArgs e)
+        {
+            MessageBox.Show($"{e.Message}");
         }
     }
 }

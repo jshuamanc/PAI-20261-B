@@ -13,15 +13,23 @@ AS
 BEGIN
 	UPDATE Products 
 	SET UnitPrice = UnitPrice*(1+(@Procentaje/100.0))
-	WHERE ProductID = @ProductID AND @RowVersion=@RowVersion;
+	WHERE ProductID = @ProductID AND RowVersion=@RowVersion;
 
 	SELECT @NuevoPrecio = UnitPrice
 	FROM Products
 	WHERE ProductID = @ProductID;
+
+	PRINT 'Precio actualizado: '+CAST(@NuevoPrecio AS VARCHAR);
 END;
 
+SELECT 'Precio actualizado: '+CAST(10.5 AS VARCHAR);
+
 DECLARE @Precio DECIMAL(18,2);
-EXECUTE SP_ActualizarPrecio 1,10,@Precio OUTPUT;
+DECLARE @Version TIMESTAMP;
+DECLARE @ProductID INT;
+SET @ProductID=1;
+SELECT @Version=RowVersion FROM Products WHERE ProductID = @ProductID;
+EXECUTE SP_ActualizarPrecio 1,10,@Precio OUTPUT,@RowVersion=@Version;
 SELECT @Precio;
 
 select * from Products where ProductID=1
@@ -30,4 +38,8 @@ select * from Products where ProductID=1
 
 UPDATE Products 
 SET UnitPrice = UnitPrice*(1+10/100.0)
-WHERE ProductID = 1 and RowVersion='0x000000000001ADC3';
+WHERE ProductID = 1;
+
+
+ALTER TABLE Products
+ADD RowVersion ROWVERSION;
